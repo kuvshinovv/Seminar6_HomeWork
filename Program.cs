@@ -3,6 +3,43 @@
 //1, -7, 567, 89, 223-> 3
 
 
+ void ShowArray(int[] array){
+    int count = 0;
+    Console.Write($"[ ");
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i]>0){
+            count++;
+        } 
+        Console.Write(array[i]+" ");
+    }
+    Console.Write($"] -> ");
+    Console.WriteLine($"Вы ввели {count} чисел больше 0");
+}
+
+
+Console.WriteLine("Введите количество чисел, которое будете вводить: ");
+int size = Convert.ToInt32(Console.ReadLine());
+
+int[] mass = new int[size];
+
+int i = 0; 
+while ( i <= size-1 )        // Использовал while т.к. начальный и конечный индексы статичны и не изменяются по ходу нашей программы и манипуляций не производим с ними, 
+                            // хотя с точки зрения количества строк я бы сделал всетаки for
+                            // или возможно я не понял, когда какой цикл использовать  :)) 
+{
+    Console.WriteLine($"Введите {i+1} число");
+    mass[i] = Convert.ToInt32(Console.ReadLine());
+    i++;
+}
+ShowArray(mass);
+
+
+
+
+
+
+
 
 
 //Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых, заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.
